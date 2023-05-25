@@ -5,7 +5,7 @@ const pauseBtn = document.querySelector(".pause");
 
 playBtn.addEventListener("click", () => {
     audio.play();
-    audio.playbackRate = 0.5;
+    audio.playbackRate = 1;
 })
 
 pauseBtn.addEventListener("click", () => {
