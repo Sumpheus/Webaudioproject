@@ -15,3 +15,4 @@ pauseBtn.addEventListener("click", () => {
 console.log(audio);
 
 //Another technique
+
