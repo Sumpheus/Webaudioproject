@@ -6,9 +6,10 @@ html(lang="en")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         link(rel="stylesheet", href="style.css")
         title Document
-    body
-        audio(src="mp3/latespringtruelove.mp3") 
-        button.play play 
-        button.pause pause
-        #songinput
+    body        
+        #container
+            canvas#canvas1
+            audio#audio1(controls="")
+            input(type="file", name="track", id="track", accept=".mp3, .wav") 
+        
         script(src="main.js" async)

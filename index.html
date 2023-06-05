@@ -7,11 +7,12 @@
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
   </head>
-  <body>
-    <audio src="mp3/latespringtruelove.mp3"> </audio>
-    <button class="play">play </button>
-    <button class="pause">pause</button>
-    <div id="songinput"></div>
+  <body>       
+    <div id="container">
+      <canvas id="canvas1"></canvas>
+      <audio id="audio1" controls=""></audio>
+      <input type="file" name="track" id="track" accept=".mp3, .wav">
+    </div>
     <script src="main.js" async></script>
   </body>
 </html>
