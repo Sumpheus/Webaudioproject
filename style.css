@@ -35,6 +35,12 @@
     width: 50%;
     margin: 50px auto;
     display: block;
+    opacity: 0.3; 
+    transition: 1s;
+}
+#audio1:hover {
+    transition: 1s;
+    opacity: 1;
 }
 
 #track{
