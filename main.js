@@ -86,6 +86,7 @@ function drawVisualiser(bufferLength, x, barWidth, barHeight, dataArray) {
         const hue = i;
         ctx.fillStyle = 'hsl(' + hue + ',100%, 50%)';
 
+
         /* const red = i * barHeight/2;
         const green = i * 10;
         const blue = barHeight/2; */
