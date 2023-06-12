@@ -22,13 +22,14 @@ let analyser;
      analyser = audioContext.createAnalyser();
      audioSource.connect(analyser);
      analyser.connect(audioContext.destination);
-     analyser.fftSize = 128; //Number of bars
+     analyser.fftSize = 1024; //Number of bars
 
      const bufferLength = analyser.frequencyBinCount;
      const dataArray = new Uint8Array(bufferLength);
 
      /* effets visuelles */
-     const barWidth = (canvas.width/2)/bufferLength;
+     /* const barWidth = (canvas.width/2)/bufferLength; */
+     const barWidth = 15;
      let barHeight;
      let x;
 
@@ -54,13 +55,14 @@ file.addEventListener('change', function(){
     analyser = audioContext.createAnalyser();
     audioSource.connect(analyser);
     analyser.connect(audioContext.destination);
-    analyser.fftSize = 128; /* Number of bars */
+    analyser.fftSize = 1024; /* Number of bars */
 
     const bufferLength = analyser.frequencyBinCount;
     const dataArray = new Uint8Array(bufferLength);
 
     /* effets visuelles */
-    const barWidth = (canvas.width/2)/bufferLength;
+    /* const barWidth = (canvas.width/2)/bufferLength; */
+    const barWidth = 15;
     let barHeight;
     let x;
 
@@ -76,32 +78,40 @@ file.addEventListener('change', function(){
 
 function drawVisualiser(bufferLength, x, barWidth, barHeight, dataArray) {
     for (let i = 0; i < bufferLength; i++){
-        barHeight = dataArray[i] * 2;
+        barHeight = dataArray[i] * 1.5;
+        ctx.save();
+        ctx.translate(canvas.width/2, canvas.height/2); 
+        ctx.rotate(i * Math.PI * 8 / bufferLength);
 
-        const red = i * barHeight/2;
+        const hue = i;
+        ctx.fillStyle = 'hsl(' + hue + ',100%, 50%)';
+
+        /* const red = i * barHeight/2;
         const green = i * 10;
-        const blue = barHeight/2;
+        const blue = barHeight/2; */
 
-        ctx.fillStyle = 'aqua';
-        ctx.fillRect(canvas.width/2 - x, canvas.height - barHeight - 30, barWidth, 15);
+        /* ctx.fillStyle = 'aqua';
+        ctx.fillRect(0, 0, barWidth, 15); */
 
-        ctx.fillStyle = 'rgb(' + red + ',' + green + ',' + blue + ')';
-        ctx.fillRect(canvas.width/2 - x, canvas.height - barHeight, barWidth, barHeight);
+        /* ctx.fillStyle = 'rgb(' + red + ',' + green + ',' + blue + ')'; */
+        ctx.fillRect(0, 0,barWidth, barHeight);
+        //ctx.fillRect(canvas.width/2 - x, canvas.height - barHeight, barWidth, barHeight);
         x += barWidth;
+        ctx.restore();
     }
 
-    for (let i = 0; i < bufferLength; i++){
+    /*for (let i = 0; i < bufferLength; i++){
         barHeight = dataArray[i] * 2;
 
         const red = i * barHeight/2;
         const green = i * 10;
         const blue = barHeight/2;
 
-        ctx.fillStyle = 'aqua';
-        ctx.fillRect(x, canvas.height - barHeight - 30, barWidth, 15);
+        //ctx.fillStyle = 'aqua';
+        //ctx.fillRect(x, canvas.height - barHeight - 30, barWidth, 15);
 
         ctx.fillStyle = 'rgb(' + red + ',' + green + ',' + blue + ')';
         ctx.fillRect(x, canvas.height - barHeight, barWidth, barHeight);
         x += barWidth;
-    }
+    }*/
 };
