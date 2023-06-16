@@ -16,10 +16,33 @@
     position: absolute;
     top: 0;
     left: 0;
-    background: #1d0b70;
     width: 100%;
     height: 100%;
+    /* background: #1d0b70; */
+    background: linear-gradient(52deg, #946403, #960577, #070136);
+    background-size: 600% 600%;
+
+    -webkit-animation: gradientanimated 25s ease infinite;
+    -moz-animation: gradientanimated 25s ease infinite;
+    animation: gradientanimated 25s ease infinite;
 }
+
+@-webkit-keyframes gradientanimated {
+    0%{background-position:0% 87%}
+    50%{background-position:100% 14%}
+    100%{background-position:0% 87%}
+}
+@-moz-keyframes gradientanimated {
+    0%{background-position:0% 87%}
+    50%{background-position:100% 14%}
+    100%{background-position:0% 87%}
+}
+@keyframes gradientanimated {
+    0%{background-position:0% 87%}
+    50%{background-position:100% 14%}
+    100%{background-position:0% 87%}
+}
+
 
 #canvas1 {
     position: absolute;
@@ -32,10 +55,10 @@
 
 #audio1 {
     position: absolute;
-    width: 50%;
+    width: 90%;
     margin: 50px auto;
     display: block;
-    opacity: 0.3; 
+    opacity: 0.5; 
     transition: 1s;
 }
 #audio1:hover {
@@ -43,9 +66,17 @@
     opacity: 1;
 }
 
-#track{
+#track {
     position: absolute;
     top: 150px;
     color: rgb(240, 228, 60);
     z-index: 100;
+}
+
+/* menu offcanvas */
+
+#menucontainer {
+    position: absolute;
+}
+.offcanvas-body{
 }
