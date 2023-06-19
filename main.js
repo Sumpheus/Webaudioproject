@@ -29,7 +29,7 @@ let analyser;
 
      /* effets visuelles */
      /* const barWidth = (canvas.width/2)/bufferLength; */
-     const barWidth = 15;
+     const barWidth = 20;
      let barHeight;
      let x;
 
@@ -84,7 +84,8 @@ function drawVisualiser(bufferLength, x, barWidth, barHeight, dataArray) {
         ctx.rotate(i * Math.PI * 8 / bufferLength);
 
         const hue = i;
-        ctx.fillStyle = 'hsl(' + hue + ',100%, 50%)';
+        //ctx.fillStyle = 'hsl(' + hue + ',100%, 50%)';
+        ctx.fillStyle = 'hsl(' + hue + ',100%,'+    barHeight/3.5   +'%)';
 
 
         /* const red = i * barHeight/2;
