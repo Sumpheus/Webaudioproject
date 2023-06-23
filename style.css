@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+
 * {
     margin:0;
     padding: 0;
@@ -5,7 +7,7 @@
 }
 
 /* body {
-    height: 100vh;
+height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -50,7 +52,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    filter: blur(1.2px);
+    filter: blur(1.2px);   
 }
 
 #audio1 {
@@ -77,6 +79,7 @@
 
 #menucontainer {
     position: absolute;
+    font-family: 'Space Grotesk', sans-serif;
 }
 .offcanvas-body{
     background-color:rgb(48, 24, 134);

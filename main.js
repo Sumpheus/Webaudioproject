@@ -22,7 +22,7 @@ let analyser;
      analyser = audioContext.createAnalyser();
      audioSource.connect(analyser);
      analyser.connect(audioContext.destination);
-     analyser.fftSize = 1024; //Number of bars
+     analyser.fftSize = 1024*2; //Number of bars
 
      const bufferLength = analyser.frequencyBinCount;
      const dataArray = new Uint8Array(bufferLength);
@@ -55,7 +55,7 @@ file.addEventListener('change', function(){
     analyser = audioContext.createAnalyser();
     audioSource.connect(analyser);
     analyser.connect(audioContext.destination);
-    analyser.fftSize = 1024; /* Number of bars */
+    analyser.fftSize = 1024*2; /* Number of bars */
 
     const bufferLength = analyser.frequencyBinCount;
     const dataArray = new Uint8Array(bufferLength);
