@@ -82,5 +82,10 @@ height: 100vh;
     font-family: 'Space Grotesk', sans-serif;
 }
 .offcanvas-body{
-    background-color:rgb(48, 24, 134);
+    background: rgb(2,0,36);
+    background: linear-gradient(180deg, rgba(2,0,36,1) 22%, 
+                                        rgba(9,121,71,1) 61%, 
+                                        rgba(8,133,95,1) 77%, 
+                                        rgba(4,173,175,1) 100%, 
+                                        rgba(0,212,255,1) 100%);
 }
