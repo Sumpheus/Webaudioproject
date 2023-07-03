@@ -56,7 +56,7 @@ height: 100vh;
 }
 
 #audio1 {
-    position: absolute;
+    position: ;
     width: 90%;
     margin: 50px auto;
     display: block;
@@ -69,7 +69,7 @@ height: 100vh;
 }
 
 #track {
-    position: absolute;
+    position: ;
     top: 150px;
     color: rgb(240, 228, 60);
     z-index: 100;
@@ -90,5 +90,16 @@ height: 100vh;
                                         rgba(0,212,255,1) 100%);
 }
 #text2{
+    color: aliceblue;
+}
+
+#refresh{
+    width: 4em;
+    height: 4em;
+    position: absolute;
+}
+
+.offcanvas-header{
+    background-color: rgba(2,0,36,1);
     color: aliceblue;
 }
