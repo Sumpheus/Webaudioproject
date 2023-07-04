@@ -76,12 +76,17 @@ height: 100vh;
 }
 
 /* menu offcanvas */
+.offcanvas-header{
+    background-color: rgba(2,0,36,1);
+    color: aliceblue;
+}
 
 #menucontainer {
     position: absolute;
     font-family: 'Space Grotesk', sans-serif;
 }
 .offcanvas-body{
+    display: flexbox;
     background: rgb(2,0,36);
     background: linear-gradient(180deg, rgba(2,0,36,1) 22%, 
                                         rgba(9,121,71,1) 61%, 
@@ -93,13 +98,19 @@ height: 100vh;
     color: aliceblue;
 }
 
+#refreshcontainer{
+    display: flex;
+    justify-content: center;
+    align-self: flex-end;
+}
 #refresh{
     width: 4em;
     height: 4em;
-    position: absolute;
+    transition: 0.3s;
+    margin-top: 6em;
 }
-
-.offcanvas-header{
-    background-color: rgba(2,0,36,1);
-    color: aliceblue;
+#refresh:hover{
+    width: 5em;
+    height: 5em;
+    transition: 0.3s;
 }
