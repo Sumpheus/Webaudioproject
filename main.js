@@ -29,7 +29,6 @@ let analyser;
      const dataArray = new Uint8Array(bufferLength);
 
      /* effets visuelles */
-     /* const barWidth = (canvas.width/2)/bufferLength; */
      const barWidth = 20;
      let barHeight;
      let x;
@@ -62,7 +61,6 @@ file.addEventListener('change', function(){
     const dataArray = new Uint8Array(bufferLength);
 
     /* effets visuelles */
-    /* const barWidth = (canvas.width/2)/bufferLength; */
     const barWidth = 15;
     let barHeight;
     let x;
@@ -88,33 +86,8 @@ function drawVisualiser(bufferLength, x, barWidth, barHeight, dataArray) {
         //ctx.fillStyle = 'hsl(' + hue + ',100%, 50%)';
         ctx.fillStyle = 'hsl(' + hue + ',100%,'+    barHeight/3.5   +'%)';
 
-
-        /* const red = i * barHeight/2;
-        const green = i * 10;
-        const blue = barHeight/2; */
-
-        /* ctx.fillStyle = 'aqua';
-        ctx.fillRect(0, 0, barWidth, 15); */
-
-        /* ctx.fillStyle = 'rgb(' + red + ',' + green + ',' + blue + ')'; */
         ctx.fillRect(0, 0,barWidth, barHeight);
-        //ctx.fillRect(canvas.width/2 - x, canvas.height - barHeight, barWidth, barHeight);
         x += barWidth;
         ctx.restore();
     }
-
-    /*for (let i = 0; i < bufferLength; i++){
-        barHeight = dataArray[i] * 2;
-
-        const red = i * barHeight/2;
-        const green = i * 10;
-        const blue = barHeight/2;
-
-        //ctx.fillStyle = 'aqua';
-        //ctx.fillRect(x, canvas.height - barHeight - 30, barWidth, 15);
-
-        ctx.fillStyle = 'rgb(' + red + ',' + green + ',' + blue + ')';
-        ctx.fillRect(x, canvas.height - barHeight, barWidth, barHeight);
-        x += barWidth;
-    }*/
 };
