@@ -91,3 +91,7 @@ function drawVisualiser(bufferLength, x, barWidth, barHeight, dataArray) {
         ctx.restore();
     }
 };
+
+document.getElementById("testbutton").addEventListener("click", function(){
+    
+})
