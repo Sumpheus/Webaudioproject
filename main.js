@@ -92,6 +92,11 @@ function drawVisualiser(bufferLength, x, barWidth, barHeight, dataArray) {
     }
 };
 
-document.getElementById("testbutton").addEventListener("click", function(){
+/* var myTest = document.getElementById("testbutton");
+myTest.onclick = function(){
+    drawVisualiser();
+}
+ */
+/* document.getElementById("testbutton").addEventListener("click", function(){
     
-})
+}) */
