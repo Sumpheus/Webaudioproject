@@ -83,8 +83,8 @@ function drawVisualiser(bufferLength, x, barWidth, barHeight, dataArray) {
         ctx.rotate(i * Math.PI * 8 / bufferLength);
 
         const hue = i;
-        //ctx.fillStyle = 'hsl(' + hue + ',100%, 50%)';
-        ctx.fillStyle = 'hsl(' + hue + ',100%,'+    barHeight/3.5   +'%)';
+        ctx.fillStyle = 'hsl(' + hue + ',100%, 50%)';
+        //ctx.fillStyle = 'hsl(' + hue + ',100%,'+    barHeight/3.5   +'%)';
 
         ctx.fillRect(0, 0,barWidth, barHeight);
         x += barWidth;
