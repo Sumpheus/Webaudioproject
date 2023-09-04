@@ -92,11 +92,13 @@ function drawVisualiser(bufferLength, x, barWidth, barHeight, dataArray) {
     }
 };
 
-/* var myTest = document.getElementById("testbutton");
+var myTest = document.getElementById("testbutton");
 myTest.onclick = function(){
-    drawVisualiser();
-}
- */
+    /*drawVisualiser();*/
+    myTest.style.backgroundColor = "blue";
+    myTest.style.color = "white";
+};
+
 /* document.getElementById("testbutton").addEventListener("click", function(){
     
 }) */
