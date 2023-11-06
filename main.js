@@ -83,21 +83,34 @@ function drawVisualiser(bufferLength, x, barWidth, barHeight, dataArray) {
         ctx.rotate(i * Math.PI * 8 / bufferLength);
 
         const hue = i;
+        // changes colors of the animation
         //ctx.fillStyle = 'hsl(' + hue + ',100%, 50%)';
-        ctx.fillStyle = 'hsl(' + hue + ',100%,'+    barHeight/3.5   +'%)';
+        //ctx.fillStyle = 'hsl(' + hue + ',100%,'+    barHeight/3.5   +'%)';
+        //ctx.fillStyle = 'hsl(' + hue*2 + ',100%, '+   barHeight/2.5 + '%)';
 
         ctx.fillRect(0, 0,barWidth, barHeight);
         x += barWidth;
         ctx.restore();
+
+        var myTest = document.getElementById("testbutton");
+        myTest.onclick = function(){
+            const hue = i;
+            ctx.fillStyle = 'hsl(' + hue + ',100%, 50%)';
+            myTest.style.backgroundColor = "grey";
+        }
     }
 };
 
-var myTest = document.getElementById("testbutton");
-myTest.onclick = function(){
-    drawVisualiser();
+//var myTest = document.getElementById("testbutton");
+
+/*myTest.onclick = function(){
+    //drawVisualiser();
     myTest.style.backgroundColor = "blue";
     myTest.style.color = "white";
-};
+
+};*/
+
+
 
 /* document.getElementById("testbutton").addEventListener("click", function(){
     
