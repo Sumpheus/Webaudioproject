@@ -92,16 +92,24 @@ function drawVisualiser(bufferLength, x, barWidth, barHeight, dataArray) {
         x += barWidth;
         ctx.restore();
 
-        var myTest = document.getElementById("testbutton");
+        /*var myTest = document.getElementById("testbutton");
         myTest.onclick = function(){
             //const hue = i;
             ctx.fillStyle = 'hsl(' + hue + ',100%, 50%)';
             myTest.style.backgroundColor = "grey";
-        }
+        }*/
     }
 };
 
-//var myTest = document.getElementById("testbutton");
+var myTest = document.getElementById("testbutton");
+var myTest2 = document.getElementById("testbutton2");
+
+myTest.onclick = function(){
+    canvas.style.filter = "hue-rotate(0deg) blur(1.2px)";
+}
+myTest2.onclick = function(){
+    canvas.style.filter = "hue-rotate(-205deg) blur(1.2px)";
+}
 
 /*myTest.onclick = function(){
     //drawVisualiser();
