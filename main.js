@@ -85,16 +85,16 @@ function drawVisualiser(bufferLength, x, barWidth, barHeight, dataArray) {
         const hue = i;
         // changes colors of the animation
         //ctx.fillStyle = 'hsl(' + hue + ',100%, 50%)';
-        //ctx.fillStyle = 'hsl(' + hue + ',100%,'+    barHeight/3.5   +'%)';
-        //ctx.fillStyle = 'hsl(' + hue*2 + ',100%, '+   barHeight/2.5 + '%)';
+        ctx.fillStyle = 'hsl(' + hue + ',100%,'+    barHeight/3.5   +'%)';
+        //ctx.fillStyle = 'hsl(' + hue*2 + ',100%, '+   barHeight/2.5 + '40%)';
 
-        ctx.fillRect(0, 0,barWidth, barHeight);
+        ctx.fillRect(10, 10,barWidth, barHeight);
         x += barWidth;
         ctx.restore();
 
         var myTest = document.getElementById("testbutton");
         myTest.onclick = function(){
-            const hue = i;
+            //const hue = i;
             ctx.fillStyle = 'hsl(' + hue + ',100%, 50%)';
             myTest.style.backgroundColor = "grey";
         }
