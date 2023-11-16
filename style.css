@@ -43,8 +43,17 @@
     left: 0;
     width: 100%;
     height: 100%;
-    filter: blur(1.2px);
-    transition-duration: 1s; 
+    filter: blur(1.2px) hue-rotate(0deg);
+    transition-duration: 1s;
+    animation: huerotation 10s infinite;
+}
+
+@keyframes huerotation{
+    0% {    filter: hue-rotate(0deg) blur(1.2px);    }
+    25% {   filter: hue-rotate(-150deg) blur(1.2px); }
+    50% {   filter: hue-rotate(370deg) blur(1.2px);  }
+    75% {   filter: hue-rotate(0deg) blur(1.2px);    }
+
 }
 
 #slidemenu{
