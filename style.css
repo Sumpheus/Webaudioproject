@@ -44,15 +44,15 @@
     width: 100%;
     height: 100%;
     filter: blur(1.2px) hue-rotate(0deg);
-    transition-duration: 1s;
+    transition-duration: 3s;
     animation: huerotation 14s infinite;
 }
 
 @keyframes huerotation{
     0% {    filter: hue-rotate(0deg) blur(1.2px);    }
-    25% {   filter: hue-rotate(-150deg) blur(1.2px); }
+    25% {   filter: hue-rotate(150deg) blur(1.2px); }
     50% {   filter: hue-rotate(370deg) blur(1.2px);  }
-    75% {   filter: hue-rotate(230deg) blur(1.2px);  }
+    75% {   filter: hue-rotate(230deg) blur(1.2px); }
     100%{   filter: hue-rotate(0deg) blur(1.2px);    }
     
 }
@@ -107,6 +107,16 @@
 }
 #text2{
     color: aliceblue;
+}
+
+#blinkT{
+    animation: blink 1s infinite;
+    margin-bottom: -20px;
+}
+@keyframes blink{
+    0% {color: gold;}
+    50% {color: aliceblue;}
+    100% {color: gold;}
 }
 
 #refreshcontainer{
