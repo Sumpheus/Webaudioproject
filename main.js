@@ -115,10 +115,10 @@ jsmediatags.read(file, {
         var base64 = "data:image/jpeg;base64," +
                 window.btoa(base64String);
         document.querySelector("#cover").setAttribute('src',base64);
-        document.querySelector("#title").textContent = tag.tags.title;
-        document.querySelector("#artist").textContent = tag.tags.artist;
-        document.querySelector("#album").textContent = tag.tags.album;
-        document.querySelector("#genre").textContent = tag.tags.genre;
+        // document.querySelector("#title").textContent = tag.tags.title;
+        // document.querySelector("#artist").textContent = tag.tags.artist;
+        // document.querySelector("#album").textContent = tag.tags.album;
+        // document.querySelector("#genre").textContent = tag.tags.genre;
       } else {
         document.querySelector("#cover").src = "icons/noimage.jpg";
       }
