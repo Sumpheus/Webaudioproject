@@ -151,6 +151,14 @@
     /* animation: rotation 3s linear infinite; */
     transition: 0.5s;
 }
+@keyframes rotation {
+        from{
+            transform: rotate(0deg);
+        }
+        to{
+            transform: rotate(360deg);
+        }
+}
 #cover:hover{
     border-radius: 30%;
 }
