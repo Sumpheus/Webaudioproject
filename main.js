@@ -84,8 +84,8 @@ function drawVisualiser(bufferLength, x, barWidth, barHeight, dataArray) {
 
         const hue = i;
         // changes colors of the animation
-        ctx.fillStyle = 'hsl(' + hue + ',100%, 50%)';
-        //ctx.fillStyle = 'hsl(' + hue + ',100%,'+    barHeight/3.5   +'%)';
+        //ctx.fillStyle = 'hsl(' + hue + ',100%, 50%)';
+        ctx.fillStyle = 'hsl(' + hue + ',100%,'+    barHeight/3.5   +'%)';
         //ctx.fillStyle = 'hsl(' + hue*2 + ',100%, '+   barHeight/2.5 + '40%)';
 
         ctx.fillRect(5, 0,barWidth*1.4, barHeight);
