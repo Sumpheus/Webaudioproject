@@ -93,3 +93,34 @@ function drawVisualiser(bufferLength, x, barWidth, barHeight, dataArray) {
         ctx.restore();
     }
 };
+
+const jsmediatags = window.jsmediatags;
+
+document.querySelector("#track").addEventListener("change", (event) => {
+    const file = event.target.files[0];
+
+jsmediatags.read(file, {
+    onSuccess: function(tag) {
+      var tags = tag.tags;
+      console.log(tags);
+
+      var image = tags.picture;
+      if (image) {
+        var base64String = "";
+        for (var i = 0; i < image.data.length; i++) {
+            base64String += String.fromCharCode(image.data[i]);
+        }
+        var base64 = "data:image/jpeg;base64," +
+                window.btoa(base64String);
+        document.querySelector("#cover").setAttribute('src',base64);
+        document.querySelector("#title").textContent = tag.tags.title;
+        document.querySelector("#artist").textContent = tag.tags.artist;
+        document.querySelector("#album").textContent = tag.tags.album;
+        document.querySelector("#genre").textContent = tag.tags.genre;
+      } else {
+        // document.querySelector("#cover").style.display = "none";
+      }
+
+    }
+    })
+});
