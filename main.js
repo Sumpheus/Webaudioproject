@@ -1,3 +1,5 @@
+window.alert("Animations might not work as expected on Firefox \n Use any other internet browser for a better experience !");
+
 const audioContext = new AudioContext();
 console.log(audioContext);
 const file = document.getElementById('track');
@@ -118,7 +120,7 @@ jsmediatags.read(file, {
         document.querySelector("#album").textContent = tag.tags.album;
         document.querySelector("#genre").textContent = tag.tags.genre;
       } else {
-        // document.querySelector("#cover").style.display = "none";
+        document.querySelector("#cover").src = "icons/noimage.jpg";
       }
 
     }

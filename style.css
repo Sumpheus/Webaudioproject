@@ -148,16 +148,9 @@
     border-radius: 50%;
     margin-bottom: -70px;
     box-shadow: 10px 6px 10px;
-    /* animation: rotation 3s linear infinite; */
     transition: 0.5s;
-}
-@keyframes rotation {
-        from{
-            transform: rotate(0deg);
-        }
-        to{
-            transform: rotate(360deg);
-        }
+    background-image: url('icons/welcome.jpg');
+    background-size: cover;
 }
 #cover:hover{
     border-radius: 30%;
