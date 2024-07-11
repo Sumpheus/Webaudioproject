@@ -135,3 +135,22 @@
     height: 5em;
     transition: 0.3s;
 }
+
+#covercontainer{
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+}
+#cover{
+    width: 12em;
+    height: 12em;
+    border-radius: 50%;
+    margin-bottom: -70px;
+    box-shadow: 10px 6px 10px;
+    /* animation: rotation 3s linear infinite; */
+    transition: 0.5s;
+}
+#cover:hover{
+    border-radius: 30%;
+}
