@@ -84,42 +84,68 @@ function drawVisualiser(bufferLength, x, barWidth, barHeight, dataArray) {
 
         const hue = i;
         // changes colors of the animation
-        //ctx.fillStyle = 'hsl(' + hue + ',100%, 50%)';
-        ctx.fillStyle = 'hsl(' + hue + ',100%,'+    barHeight/3.5   +'%)';
+        ctx.fillStyle = 'hsl(' + hue + ',100%, 50%)';
+        //ctx.fillStyle = 'hsl(' + hue + ',100%,'+    barHeight/3.5   +'%)';
         //ctx.fillStyle = 'hsl(' + hue*2 + ',100%, '+   barHeight/2.5 + '40%)';
 
-        ctx.fillRect(10, 10,barWidth, barHeight);
+        ctx.fillRect(5, 0,barWidth*1.4, barHeight);
         x += barWidth;
         ctx.restore();
-
-        /*var myTest = document.getElementById("testbutton");
-        myTest.onclick = function(){
-            //const hue = i;
-            ctx.fillStyle = 'hsl(' + hue + ',100%, 50%)';
-            myTest.style.backgroundColor = "grey";
-        }*/
     }
 };
 
-var myTest = document.getElementById("testbutton");
-var myTest2 = document.getElementById("testbutton2");
+const jsmediatags = window.jsmediatags;
 
-myTest.onclick = function(){
-    canvas.style.filter = "hue-rotate(0deg) blur(1.2px)";
-}
-myTest2.onclick = function(){
-    canvas.style.filter = "hue-rotate(-205deg) blur(1.2px)";
-}
+/*document.querySelector("#track").addEventListener("change", (event) => {
+    const file = event.target.files[0];
 
-/*myTest.onclick = function(){
-    //drawVisualiser();
-    myTest.style.backgroundColor = "blue";
-    myTest.style.color = "white";
+    jsmediatags.read(file, {
+        onSuccess: function(tag){
 
-};*/
+            const data = tag.tags.picture.data;
+            const format = tag.tags.picture.format;
+            let base64String = "";
 
+            for(let i = 0;i < data.length;i++)
+                base64String += String.fromCharCode(data[i]);
 
+            document.querySelector("#cover").style.backgroundImage = `url(data:${format};base64,${window.btoa(base64String)})`;
+            document.querySelector("#title").textContent = tag.tags.title;
+            document.querySelector("#artist").textContent = tag.tags.artist;
+            document.querySelector("#album").textContent = tag.tags.album;
+            document.querySelector("#genre").textContent = tag.tags.genre;
+        },
+        onError: function(error){
+            console.log(error);
+        }
+    })
+});*/
 
-/* document.getElementById("testbutton").addEventListener("click", function(){
-    
-}) */
+document.querySelector("#track").addEventListener("change", (event) => {
+    const file = event.target.files[0];
+
+jsmediatags.read(file, {
+    onSuccess: function(tag) {
+      var tags = tag.tags;
+      console.log(tags);
+
+      var image = tags.picture;
+      if (image) {
+        var base64String = "";
+        for (var i = 0; i < image.data.length; i++) {
+            base64String += String.fromCharCode(image.data[i]);
+        }
+        var base64 = "data:image/jpeg;base64," +
+                window.btoa(base64String);
+        document.querySelector("#cover").setAttribute('src',base64);
+        document.querySelector("#title").textContent = tag.tags.title;
+        document.querySelector("#artist").textContent = tag.tags.artist;
+        document.querySelector("#album").textContent = tag.tags.album;
+        document.querySelector("#genre").textContent = tag.tags.genre;
+      } else {
+        // document.querySelector("#cover").style.display = "none";
+      }
+
+    }
+    })
+});

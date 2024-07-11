@@ -45,7 +45,7 @@
     height: 100%;
     filter: blur(1.2px) hue-rotate(0deg);
     transition-duration: 1s;
-    animation: huerotation 14s infinite;
+    /*animation: huerotation 14s infinite;*/
 }
 
 @keyframes huerotation{
@@ -129,4 +129,36 @@
 #testbutton{
     background-color: crimson;
     border-color: green;
+}
+
+#trackinfos{
+    color: aliceblue;
+    
+}
+
+#covercontainer{
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+}
+#cover{
+    width: 12em;
+    height: 12em;
+    border-radius: 50%;
+    margin-bottom: -70px;
+    box-shadow: 10px 6px 10px;
+    /* animation: rotation 3s linear infinite; */
+    transition: 0.5s;
+}
+@keyframes rotation {
+        from{
+            transform: rotate(0deg);
+        }
+        to{
+            transform: rotate(360deg);
+        }
+}
+#cover:hover{
+    border-radius: 30%;
 }

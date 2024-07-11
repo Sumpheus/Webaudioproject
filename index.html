@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsmediatags/3.9.5/jsmediatags.min.js"></script>
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <title>Sumpheus Visualiser</title>
@@ -27,19 +28,24 @@
                         Noting that the animations runs better on Chrome.</br>
                         Have fun!
           </p>
+         <!-- Le lecteur --> 
           <input type="file" name="track" id="track" accept="audio/*">
           <audio id="audio1" controls=""></audio>
+          <div id="covercontainer">
+            <img id="cover"/>
+          </div>
           <div id="refreshcontainer">          
-            <img id="refresh" src="icons/refresh.gif">
-          </div>
-          
-          <div>
-            <button type="button" id="testbutton">test</button>
-            <button type="button" id="testbutton2">test</button>
-          </div>
+            <img id="refresh" src="icons/refresh.gif">             
+          </div>          
 
         </div>
       </div>
+        <div id="trackinfos">
+            <p id="title"></p>
+            <p id="artist"></p>
+            <p id="album"></p>
+            <P id="genre"></P>
+          </div>
     </div>
 
     <script src="main.js" async></script>
