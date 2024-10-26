@@ -1,3 +1,5 @@
+window.alert("Animations might not work as expected on Firefox \n Use any other internet browser for a better experience !");
+
 const audioContext = new AudioContext();
 console.log(audioContext);
 const file = document.getElementById('track');
@@ -96,31 +98,6 @@ function drawVisualiser(bufferLength, x, barWidth, barHeight, dataArray) {
 
 const jsmediatags = window.jsmediatags;
 
-/*document.querySelector("#track").addEventListener("change", (event) => {
-    const file = event.target.files[0];
-
-    jsmediatags.read(file, {
-        onSuccess: function(tag){
-
-            const data = tag.tags.picture.data;
-            const format = tag.tags.picture.format;
-            let base64String = "";
-
-            for(let i = 0;i < data.length;i++)
-                base64String += String.fromCharCode(data[i]);
-
-            document.querySelector("#cover").style.backgroundImage = `url(data:${format};base64,${window.btoa(base64String)})`;
-            document.querySelector("#title").textContent = tag.tags.title;
-            document.querySelector("#artist").textContent = tag.tags.artist;
-            document.querySelector("#album").textContent = tag.tags.album;
-            document.querySelector("#genre").textContent = tag.tags.genre;
-        },
-        onError: function(error){
-            console.log(error);
-        }
-    })
-});*/
-
 document.querySelector("#track").addEventListener("change", (event) => {
     const file = event.target.files[0];
 
@@ -138,12 +115,12 @@ jsmediatags.read(file, {
         var base64 = "data:image/jpeg;base64," +
                 window.btoa(base64String);
         document.querySelector("#cover").setAttribute('src',base64);
-        document.querySelector("#title").textContent = tag.tags.title;
-        document.querySelector("#artist").textContent = tag.tags.artist;
-        document.querySelector("#album").textContent = tag.tags.album;
-        document.querySelector("#genre").textContent = tag.tags.genre;
+        // document.querySelector("#title").textContent = tag.tags.title;
+        // document.querySelector("#artist").textContent = tag.tags.artist;
+        // document.querySelector("#album").textContent = tag.tags.album;
+        // document.querySelector("#genre").textContent = tag.tags.genre;
       } else {
-        // document.querySelector("#cover").style.display = "none";
+        document.querySelector("#cover").src = "icons/noimage.jpg";
       }
 
     }
